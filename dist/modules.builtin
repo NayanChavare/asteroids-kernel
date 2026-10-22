@@ -402,6 +402,7 @@ kernel/drivers/leds/trigger/ledtrig-timer.ko
 kernel/drivers/leds/trigger/ledtrig-transient.ko
 kernel/drivers/firmware/arm_scpi.ko
 kernel/drivers/firmware/arm_scmi/scmi-module.ko
+kernel/drivers/firmware/arm_scmi/scmi_perf_domain.ko
 kernel/drivers/firmware/efi/efi-pstore.ko
 kernel/drivers/hid/hid.ko
 kernel/drivers/hid/uhid.ko
