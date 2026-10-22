@@ -1,0 +1,401 @@
+#/* @file
+#  Copyright (c) 2017-2018,2021 The Linux Foundation. All rights reserved.
+#  Portions Copyright (c) 2011-2013, ARM Limited. All rights reserved.
+#
+#  This program and the accompanying materials
+#  are licensed and made available under the terms and conditions of the BSD License
+#  which accompanies this distribution.  The full text of the license may be found at
+#  http://opensource.org/licenses/bsd-license.php
+#
+#  THE PROGRAM IS DISTRIBUTED UNDER THE BSD LICENSE ON AN "AS IS" BASIS,
+#  WITHOUT WARRANTIES OR REPRESENTATIONS OF ANY KIND, EITHER EXPRESS OR IMPLIED.
+#
+#  Changes from Qualcomm Innovation Center, Inc. are provided under the following license:
+#  Copyright (c) 2024 Qualcomm Innovation Center, Inc. All rights reserved.
+#  SPDX-License-Identifier: BSD-3-Clause-Clear
+#*/
+#/*
+# * Changes from Qualcomm Innovation Center are provided under the following license:
+# *
+# * Copyright (c) 2024 Qualcomm Innovation Center, Inc. All rights reserved.
+# *
+# *  Redistribution and use in source and binary forms, with or without
+# *  modification, are permitted (subject to the limitations in the
+# *  disclaimer below) provided that the following conditions are met:
+# *
+# *  * Redistributions of source code must retain the above copyright
+# *    notice, this list of conditions and the following disclaimer.
+# *
+# *  * Redistributions in binary form must reproduce the above
+# *    copyright notice, this list of conditions and the following
+# *    disclaimer in the documentation and/or other materials provided
+# *    with the distribution.
+# *
+# *  * Neither the name of Qualcomm Innovation Center, Inc. nor the names of its
+# *    contributors may be used to endorse or promote products derived
+# *    from this software without specific prior written permission.
+# *
+# *  NO EXPRESS OR IMPLIED LICENSES TO ANY PARTY'S PATENT RIGHTS ARE
+# *  GRANTED BY THIS LICENSE. THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT
+# *  HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED
+# *   WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+# *  MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+# *  IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR
+# *  ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+# *  DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
+# *  GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+# *  INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER
+# *  IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+# *  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
+# *  IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#*/
+
+# DO NOT EDIT
+# FILE auto-generated
+
+[Defines]
+  INF_VERSION                = 0x00010017
+  BASE_NAME                  = LinuxLoader
+  FILE_GUID                  = f536d559-459f-48fa-8bbc-43b554ecae8d
+  MODULE_TYPE                = UEFI_APPLICATION
+  VERSION_STRING             = 0.1
+  ENTRY_POINT                = LinuxLoaderEntry
+
+[Packages.AARCH64]
+  ArmPkg/ArmPkg.dec
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+  QcomModulePkg/QcomModulePkg.dec
+  OvmfPkg/OvmfPkg.dec
+
+[Binaries.AARCH64]
+  PE32|LinuxLoader.efi
+
+[PatchPcd.AARCH64]
+
+[Protocols.AARCH64]
+  gEfiSimpleTextInputExProtocolGuid
+
+  gEfiBlockIoProtocolGuid
+
+  gEfiLoadedImageProtocolGuid
+
+  gEfiDevicePathToTextProtocolGuid
+
+  ## SOMETIMES_CONSUMES
+  gEfiDevicePathProtocolGuid
+
+  gEfiDevicePathFromTextProtocolGuid
+
+  ## SOMETIMES_CONSUMES
+  gEfiSimpleFileSystemProtocolGuid
+
+  gEfiLoadFileProtocolGuid
+
+  gEfiDiskIoProtocolGuid
+
+  gEfiUsbIoProtocolGuid
+
+  gEfiPlatformInfoProtocolGuid
+
+  gEfiChipInfoProtocolGuid
+
+  gQcomPmicVersionProtocolGuid
+
+  gEfiMemCardInfoProtocolGuid
+
+  gEfiPrint2ProtocolGuid
+
+  gEfiPartitionRecordGuid
+
+  gEfiResetReasonProtocolGuid
+
+  gQcomRngProtocolGuid
+
+  ## CONSUMES
+  gEfiStatusCodeRuntimeProtocolGuid
+
+  ## UNDEFINED
+  gEfiDebugPortProtocolGuid
+
+  ## SOMETIMES_PRODUCES
+  gEfiDriverBindingProtocolGuid
+
+  ## SOMETIMES_CONSUMES
+  gEfiSimpleTextOutProtocolGuid
+
+  ## SOMETIMES_CONSUMES
+  gEfiGraphicsOutputProtocolGuid
+
+  ## SOMETIMES_CONSUMES
+  gEfiHiiFontProtocolGuid
+
+  ## SOMETIMES_CONSUMES # Consumes if gEfiGraphicsOutputProtocolGuid uninstalled
+  gEfiUgaDrawProtocolGuid
+
+  ## SOMETIMES_PRODUCES # User chooses to produce it
+  gEfiComponentNameProtocolGuid
+
+  ## SOMETIMES_PRODUCES # User chooses to produce it
+  gEfiComponentName2ProtocolGuid
+
+  ## SOMETIMES_PRODUCES # User chooses to produce it
+  gEfiDriverConfigurationProtocolGuid
+
+  ## SOMETIMES_PRODUCES # User chooses to produce it
+  gEfiDriverConfiguration2ProtocolGuid
+
+  ## SOMETIMES_PRODUCES # User chooses to produce it
+  gEfiDriverDiagnosticsProtocolGuid
+
+  ## SOMETIMES_PRODUCES # User chooses to produce it
+  gEfiDriverDiagnostics2ProtocolGuid
+
+  gEfiCpuArchProtocolGuid
+
+  gQcomQseecomProtocolGuid
+
+  gEfiSPSSProtocolGuid
+
+  gEfiHash2ProtocolGuid
+
+  gEfiHashAlgorithmSha256Guid
+
+  gEfiQcomASN1X509ProtocolGuid
+
+  gEfiQcomSecRSAProtocolGuid
+
+  gEfiRamPartitionProtocolGuid
+
+  gEfiRmVmProtocolGuid
+
+  gQcomPmicPonProtocolGuid
+
+  gChargerExProtocolGuid
+
+  gEfiLimitsProtocolGuid
+
+  gEfiQcomVerifiedBootProtocolGuid
+
+  gQcomScmModeSwithProtocolGuid
+
+  gQcomMdtpProtocolGuid
+
+  gQcomScmProtocolGuid
+
+  gEfiNandPartiGuidProtocolGuid
+
+  gEfiDDRGetInfoProtocolGuid
+
+  gEfiKernelProtocolGuid
+
+  gEfiDisplayPowerStateProtocolGuid
+
+  gEfiSoftSkuProtocolGuid
+
+  gEfiSimpleTextInProtocolGuid
+
+  gEfiUsbDeviceProtocolGuid
+
+  gEfiUsbfnIoProtocolGuid
+
+  gEfiEraseBlockProtocolGuid
+
+  gEfiUbiFlasherProtocolGuid
+
+  gQcomDisplayUtilsProtocolGuid
+
+
+[Ppis.AARCH64]
+
+[Guids.AARCH64]
+  gEfiFileInfoGuid
+
+  gArmMpCoreInfoGuid
+
+  gEfiSdRemovableGuid
+
+  gEfiFileSystemInfoGuid
+
+  gEfiPartitionTypeGuid
+
+  gEfiEventVirtualAddressChangeGuid
+
+  gEfiEmmcRpmbPartitionGuid
+
+  gEfiEmmcGppPartition1Guid
+
+  gEfiEmmcUserPartitionGuid
+
+  gEfiNandUserPartitionGuid
+
+  gEfiPlatPartitionTypeGuid
+
+  gQcomKeypadDeviceGuid
+
+  ## SOMETIMES_CONSUMES  ## Variable
+  gEfiGlobalVariableGuid
+
+  gEfiLogFSPartitionGuid
+
+  gEfiBootImgPartitionGuid
+
+  gEfiRecoveryImgPartitionGuid
+
+  gEfiUfsLU0Guid
+
+  gEfiUfsLU1Guid
+
+  gEfiUfsLU2Guid
+
+  gEfiUfsLU3Guid
+
+  gEfiUfsLU4Guid
+
+  gEfiUfsLU5Guid
+
+  gEfiUfsLU6Guid
+
+  gEfiUfsLU7Guid
+
+  gEfiNvme0Guid
+
+  ## SOMETIMES_CONSUMES ## UNDEFINED
+  gEfiStatusCodeSpecificDataGuid
+
+  ## SOMETIMES_CONSUMES ## UNDEFINED
+  ## SOMETIMES_CONSUMES ## GUID
+  gEfiStatusCodeDataTypeDebugGuid
+
+  ## SOMETIMES_CONSUMES  ## GUID
+  gEfiVTUTF8Guid
+
+  ## SOMETIMES_CONSUMES  ## GUID
+  gEfiVT100Guid
+
+  ## SOMETIMES_CONSUMES  ## GUID
+  gEfiVT100PlusGuid
+
+  ## SOMETIMES_CONSUMES  ## GUID
+  gEfiPcAnsiGuid
+
+  ## SOMETIMES_CONSUMES  ## GUID
+  gEfiUartDevicePathGuid
+
+  ## SOMETIMES_CONSUMES  ## GUID
+  gEfiSasDevicePathGuid
+
+  ## SOMETIMES_CONSUMES  ## GUID
+  gEfiVirtualDiskGuid
+
+  ## SOMETIMES_CONSUMES  ## GUID
+  gEfiVirtualCdGuid
+
+  ## SOMETIMES_CONSUMES  ## GUID
+  gEfiPersistentVirtualDiskGuid
+
+  ## SOMETIMES_CONSUMES  ## GUID
+  gEfiPersistentVirtualCdGuid
+
+  ## SOMETIMES_CONSUMES  ## Event
+  gEfiEventReadyToBootGuid
+
+  ## SOMETIMES_CONSUMES  ## Event
+  gEfiEventLegacyBootGuid
+
+  ## SOMETIMES_CONSUMES  ## SystemTable
+  gEfiAcpi20TableGuid
+
+  ## SOMETIMES_CONSUMES  ## SystemTable
+  gEfiAcpi10TableGuid
+
+  ## CONSUMES  ## SystemTable
+  gEfiDxeServicesTableGuid
+
+  gEfiVbmetaPartitionGuid
+
+  gEfiDtboPartitionGuid
+
+  gEfiRNGAlgRawGuid
+
+  ## SOMETIMES_CONSUMES   ## UNDEFINED # Locate protocol
+  gEdkiiPerformanceMeasurementProtocolGuid
+
+  ## CONSUMES  ## SystemTable
+  gEfiHobListGuid
+
+  gEfiMiscPartitionGuid
+
+  gVirtioMmioTransportGuid
+
+  gBlockIoRefreshGuid
+
+
+[PcdEx.AARCH64]
+
+[LibraryClasses.AARCH64]
+## @LIB_INSTANCES
+#  MdeModulePkg/Library/DxeReportStatusCodeLib/DxeReportStatusCodeLib.inf
+#  MdePkg/Library/BasePrintLib/BasePrintLib.inf
+#  MdePkg/Library/UefiMemoryAllocationLib/UefiMemoryAllocationLib.inf
+#  MdePkg/Library/BaseMemoryLibOptDxe/BaseMemoryLibOptDxe.inf
+#  MdePkg/Library/BasePcdLibNull/BasePcdLibNull.inf
+#  MdePkg/Library/BaseDebugPrintErrorLevelLib/BaseDebugPrintErrorLevelLib.inf
+#  MdePkg/Library/UefiDevicePathLib/UefiDevicePathLib.inf
+#  MdeModulePkg/Library/PeiDxeDebugLibReportStatusCode/PeiDxeDebugLibReportStatusCode.inf
+#  MdePkg/Library/BaseLib/BaseLib.inf
+#  MdePkg/Library/UefiBootServicesTableLib/UefiBootServicesTableLib.inf
+#  MdePkg/Library/UefiRuntimeServicesTableLib/UefiRuntimeServicesTableLib.inf
+#  MdePkg/Library/UefiLib/UefiLib.inf
+#  ArmPkg/Library/ArmLib/ArmBaseLib.inf
+#  EmbeddedPkg/Library/FdtLib/FdtLib.inf
+#  MdePkg/Library/DxeServicesTableLib/DxeServicesTableLib.inf
+#  ArmPkg/Library/ArmGenericTimerPhyCounterLib/ArmGenericTimerPhyCounterLib.inf
+#  QcomModulePkg/Library/avb/AvbLib.inf
+#  QcomModulePkg/Library/OpenDice/open-dice.inf
+#  QcomModulePkg/Library/aes/AesLib.inf
+#  QcomModulePkg/Library/UbsanLib/UbsanLib.inf
+#  QcomModulePkg/Library/StackCanary/StackCanary.inf
+#  ArmPkg/Library/ArmArchTimerLib/ArmArchTimerLib.inf
+#  MdeModulePkg/Library/DxePerformanceLib/DxePerformanceLib.inf
+#  MdePkg/Library/DxeHobLib/DxeHobLib.inf
+#  QcomModulePkg/Library/zlib/zlib.inf
+#  ArmPkg/Library/ArmCacheMaintenanceLib/ArmCacheMaintenanceLib.inf
+#  ArmPkg/Library/CompilerIntrinsicsLib/CompilerIntrinsicsLib.inf
+#  QcomModulePkg/Library/BootLib/BootLib.inf
+#  MdePkg/Library/UefiApplicationEntryPoint/UefiApplicationEntryPoint.inf
+#  ArmPkg/Library/ArmSmcLib/ArmSmcLib.inf
+#  EmbeddedPkg/Library/LibUfdt/LibUfdt.inf
+#  QcomModulePkg/Library/FastbootLib/FastbootLib.inf
+#  QcomModulePkg/Library/lz4/lib/Lz4Lib.inf
+
+[Depex.AARCH64]
+#  (TRUE) AND (TRUE) AND (TRUE) AND (TRUE) AND (TRUE) AND (TRUE)
+
+
+
+
+
+[BuildOptions.AARCH64]
+## @AsBuilt
+##   GCC:DEBUG_CLANG35_AARCH64_ASLPP_FLAGS = -x c -E -P
+##   GCC:DEBUG_CLANG35_AARCH64_ASLDLINK_FLAGS = -target aarch64-linux-gnu -Wl,--emit-relocs -nostdlib -Wl,--gc-sections -Wl,--discard-none -u $(IMAGE_ENTRY_POINT) -Wl,-e,$(IMAGE_ENTRY_POINT),-Map,$(DEST_DIR_DEBUG)/$(BASE_NAME).map -z max-page-size=0x20 --entry ReferenceAcpiTable -u $(IMAGE_ENTRY_POINT)
+##   GCC:DEBUG_CLANG35_AARCH64_GENFW_FLAGS = 
+##   GCC:DEBUG_CLANG35_AARCH64_OBJCOPY_FLAGS = --rename-section=.text=.text,alloc,code,readonly
+##   GCC:DEBUG_CLANG35_AARCH64_ASM_FLAGS = -c -x assembler -imacros $(DEST_DIR_DEBUG)/AutoGen.h -target aarch64-linux-gnu $(ARCHASM_FLAGS) $(PLATFORM_FLAGS)
+##   GCC:DEBUG_CLANG35_AARCH64_CC_FLAGS = -g -fshort-wchar -fno-strict-aliasing -Wall -Werror -Wno-array-bounds  -c -include AutoGen.h -mlittle-endian -fno-short-enums -save-temps -fverbose-asm -fsigned-char  -ffunction-sections -fdata-sections -fomit-frame-pointer -fno-builtin -Wno-address -fno-asynchronous-unwind-tables -target aarch64-linux-gnu -mcmodel=small -mstrict-align -Wno-parentheses-equality -Wno-tautological-compare -Wno-tautological-constant-out-of-range-compare -Wno-empty-body  -D=__FORTIFY_SOURCE -D_FORTIFY_SOURCE=2 -O2 $(ARCHCC_FLAGS) $(PLATFORM_FLAGS) -mtune=cortex-a53  -Oz $(LLVM_ENABLE_SAFESTACK) $(LLVM_SAFESTACK_USE_PTR) $(LLVM_SAFESTACK_COLORING) $(SDLLVM_COMPILE_ANALYZE) $(SDLLVM_ANALYZE_REPORT) $(UBSAN_UEFI_GCC_FLAG_UNDEFINED) $(UBSAN_UEFI_GCC_FLAG_ALIGNMENT) $(PVMFW_USE_DUMMY_BCC) -DZ_SOLO -DPRODUCT_NAME=\"$(BOARD_BOOTLOADER_PRODUCT_NAME)\" -DENABLE_UPDATE_PARTITIONS_CMDS -DENABLE_BOOT_CMD -DENABLE_DEVICE_CRITICAL_LOCK_UNLOCK_CMDS -DINIT_BIN='"/init"' -DVERIFIED_BOOT_ENABLED -DBASE_ADDRESS=0x80000000 -DREMOVE_CARVEOUT_REGION
+##   GCC:DEBUG_CLANG35_AARCH64_ASMLINK_FLAGS = /nologo /tiny
+##   GCC:DEBUG_CLANG35_AARCH64_VFR_FLAGS = -l -n
+##   GCC:DEBUG_CLANG35_AARCH64_ASLCC_FLAGS = -x c
+##   GCC:DEBUG_CLANG35_AARCH64_APP_FLAGS = 
+##   GCC:DEBUG_CLANG35_AARCH64_OPTROM_FLAGS = -e
+##   GCC:DEBUG_CLANG35_AARCH64_SYMRENAME_FLAGS = Symbol renaming not needed for
+##   GCC:DEBUG_CLANG35_AARCH64_RC_FLAGS = -I binary -O elf64-littleaarch64 -B aarch64 --rename-section .data=.hii
+##   GCC:DEBUG_CLANG35_AARCH64_PP_FLAGS = -E -x assembler-with-cpp -include $(DEST_DIR_DEBUG)/AutoGen.h $(ARCHCC_FLAGS) $(PLATFORM_FLAGS)
+##   GCC:DEBUG_CLANG35_AARCH64_PLATFORM_FLAGS = 
+##   GCC:DEBUG_CLANG35_AARCH64_DLINK_FLAGS = -target aarch64-linux-gnu -Wl,--emit-relocs -nostdlib -Wl,--gc-sections -Wl,--discard-none -u $(IMAGE_ENTRY_POINT) -Wl,-e,$(IMAGE_ENTRY_POINT),-Map,$(DEST_DIR_DEBUG)/$(BASE_NAME).map -z max-page-size=0x20 -z max-page-size=0x1000 -Wl,-Ttext=0x0 $(CLANG_EXTRA_DLINK_FLAGS)
+##   GCC:DEBUG_CLANG35_AARCH64_VFRPP_FLAGS = -x c -E -P -DVFRCOMPILE --include $(DEST_DIR_DEBUG)/$(MODULE_NAME)StrDefs.h $(ARCHCC_FLAGS) $(PLATFORM_FLAGS)
+##   GCC:DEBUG_CLANG35_AARCH64_ASL_FLAGS = 
+##   GCC:DEBUG_CLANG35_AARCH64_ARCHCC_FLAGS = -Wno-shift-negative-value -fstack-protector-all -Wno-varargs -fno-common -Wno-misleading-indentation -Wno-unknown-warning-option
+##   GCC:DEBUG_CLANG35_AARCH64_NASMB_FLAGS = -f bin
+##   GCC:DEBUG_CLANG35_AARCH64_DLINK2_FLAGS = -Wl,--script=$(EDK_TOOLS_PATH)/Scripts/GccBase.lds -Wl,--defsym=PECOFF_HEADER_SIZE=0x228 -fuse-ld=/serverhive5/nayanyc23/ves/kernel_platform/out/bazel/output_user_root/437859be36c3d0c8ab85e32c881a24b3/sandbox/linux-sandbox/52/execroot/__main__/prebuilts/clang/host/linux-x86/clang-r487747c/bin//ld.lld

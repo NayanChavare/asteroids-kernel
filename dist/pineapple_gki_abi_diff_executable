@@ -1,0 +1,4 @@
+#!/bin/bash -e
+
+        . msm-kernel/pineapple_gki_abi_diff_executable_hermetic_exec_toolchain_run_setup/run_setup.sh
+    

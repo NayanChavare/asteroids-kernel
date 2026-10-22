@@ -1,0 +1,1 @@
+/serverhive5/nayanyc23/ves/kernel_platform/out/bazel/output_user_root/437859be36c3d0c8ab85e32c881a24b3/execroot/__main__/bootable/bootloader/edk2/BaseTools/Scripts/GccBase.lds
